@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My interactive webpage</title>
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Holy Grail Layout Setup */
+        body {
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr;
+            grid-template-rows: auto 1fr auto auto;
+            grid-template-areas:
+                "header header header"
+                "sidebar content ad"
+                "footer footer footer"
+                "contact contact contact";
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4faff; /* Light Blue Background */
+            color: #5f9ea0; /* Light Blue Text Color */
+        }
+
+        /* Header */
+        header {
+            grid-area: header;
+            background-color: #b0e0e6; /* Light Blue */
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            background-image: url('https://via.placeholder.com/1200x300.png?text=Nature+Header'); /* Placeholder Image URL */
+            background-size: cover;
+            background-position: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Sidebar */
+        nav {
+            grid-area: sidebar;
+            background-color: #e0ffff; /* Pale Turquoise */
+            padding: 20px;
+            border-right: 2px solid #afeeee;
+        }
+
+        nav h2 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            color: #4682b4; /* Steel Blue */
+        }
+
+        nav ul {
+            list-style-type: none;
+        }
+
+        nav ul li {
+            margin: 10px 0;
+        }
+
+        nav ul li a {
+            color: #4682b4; /* Steel Blue */
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Content Area */
+        main {
+            grid-area: content;
+            background-color: #ffffff; /* White Background */
+            padding: 20px;
+            color: #5f9ea0; /* Light Blue Text */
+        }
+
+        main h2 {
+            font-size: 2rem;
+            color: #4682b4; /* Steel Blue */
+        }
+
+        main p {
+            font-size: 1.1rem;
+            margin: 15px 0;
+        }
+
+        /* Advertisement Section */
+        .ad {
+            grid-area: ad;
+            text-align: center;
+            padding: 20px;
+            background-color: #fafad2; /* Light Goldenrod Yellow */
+            border-radius: 10px;
+        }
+
+        .ad h2 {
+            font-size: 1.5rem;
+            color: #4682b4; /* Steel Blue */
+        }
+
+        .ad img {
+            max-width: 100%;
+            height: auto;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        /* Footer */
+        footer {
+            grid-area: footer;
+            background-color: #b0e0e6; /* Light Blue */
+            color: black;
+            text-align: center;
+            padding: 10px;
+            font-size: 0.9rem;
+            justify-content: center;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        /* Contact Section */
+        .contact {
+            grid-area: contact;
+            background-color: #e0ffff; /* Pale Turquoise */
+            padding: 20px;
+            text-align: center;
+            border-top: 2px solid #afeeee;
+        }
+
+        .contact h2 {
+            color: #4682b4;
+            font-size: 2rem;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact label {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: #4682b4;
+        }
+
+        .contact input, .contact textarea {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            border: 1px solid #4682b4;
+            border-radius: 5px;
+        }
+
+        .contact button {
+            padding: 10px 20px;
+            background-color: #afeeee;
+            border: none;
+            color: #4682b4;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .contact button:hover {
+            background-color: #87cefa; /* Light Sky Blue */
+        }
+
+        /* Button Styling */
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #afeeee; /* Pale Turquoise */
+            color: #4682b4; /* Steel Blue */
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #87cefa; /* Light Sky Blue */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    "header"
+                    "content"
+                    "sidebar"
+                    "ad"
+                    "contact"
+                    "footer";
+            }
+
+            nav {
+                border-right: none;
+            }
+
+            .ad {
+                margin-top: 20px;
+            }
+
+            .contact {
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Explore the Beauty of Nature</h1>
+    </header>
+
+    <!-- Sidebar Section -->
+    <nav>
+        <h2>Explore More</h2>
+        <ul>
+            <li><a href="#">Forest Adventures</a></li>
+            <li><a href="#">Mountain Trails</a></li>
+            <li><a href="#">Ocean Expeditions</a></li>
+            <li><a href="#">Wildlife Photography</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main>
+        <h2>My interactive webpage</h2>
+        <p>Click the button below to sort an array of nature-inspired numbers using Bubble Sort.</p>
+        <button onclick="sortArray()">Sort Numbers</button>
+        <p id="sortedNumbers"></p>
+    </main>
+
+    <!-- Advertisement Section -->
+    <div class="ad">
+        <h2>Nature-Themed Advertisement</h2>
+        <a href="https://www.amazon.com/s?k=nature+book" target="_blank">
+            <img src="https://www.monstertreeservice.com/cms/thumbnails/24/1080x540/images/articles/GettyImages-476116580.jpg" alt="Nature Book Advertisement">
+        </a>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Last updated: <span id="lastModified"></span></p>
+        <section>
+            <center><h3>Addendum</h3></center>
+            <ul>
+                <li>Explanation of how the code works:</li>
+                <li>1. The webpage's structure is divided into various sections (header, sidebar, content, ad, contact, and footer).</li>
+                <li>2. The sortArray function is triggered by the button click to sort a predefined array using the bubbleSort algorithm.</li>
+                <li>3. The bubbleSort function compares each number in the array and swaps them if they are in the wrong order, effectively sorting the array.</li>
+                <li>4. The last modified date of the webpage is dynamically displayed in the footer.</li>
+            </ul>
+        </section>
+    </footer>
+
+    <!-- JavaScript -->
+    <script type="text/javascript">
+        // Bubble Sort Algorithm
+        function sortArray() {
+            let numbers = [12, 7, 35, 18, 9, 41, 27, 22]; // Array of nature-inspired numbers
+            let sortedNumbers = bubbleSort(numbers); // Call to bubbleSort function to sort the numbers
+
+            // Display sorted numbers
+            document.getElementById("sortedNumbers").innerText = "Sorted Numbers: " + sortedNumbers.join(", ");
+        }
+
+        // Bubble Sort function implementation
+        function bubbleSort(arr) {
+            let len = arr.length;
+            for (let i = 0; i < len - 1; i++) {
+                for (let j = 0; j < len - 1 - i; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        // Swap elements if they are in the wrong order
+                        let temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+            return arr;
+        }
+
+        // Display the last modified date of the webpage
+        var x = document.lastModified;
+        document.getElementById('lastModified').textContent = x; // Display the last modified date in the footer
+    </script>
+
+   
+</body>
+</html>
+
+
